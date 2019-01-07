@@ -1,0 +1,379 @@
+
+
+/*EN ALGUNAS CABECERAS SE AÑADE ESTILO EN LINEA COMO POR EJEMPLO float: left; PARA DEJAR EN LA PARTE DERECHA LA FECHA EN LOS ELEMENTOS DE LA PARTE CENTRAL*/
+
+
+/*Importamos de GoogleFonts la fuente Montserrat*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+/*Indicamos que todos los elementos tendrán el siguiente padding y borde*/
+* {
+    box-sizing: border-box;
+}
+
+/*Indicamos que el body tendrá la fuente especificada y 0 de margen entre los elementos (Así conseguimos que los elementos se peguen al borde la pantalla)*/
+body {
+    font-family: 'Montserrat', Arial;
+    margin: 0;
+}
+/*Indicamos que lo que esté dentro de esta clase será un contenedor flexible*/
+/*En el caso de ser necesario se envolverán los elementos*/
+.content {
+    display: flex;
+    flex-wrap: wrap;
+}
+/*Una clase para centrar el texto cuando queramos*/
+.centrado{
+    text-align: center;
+}
+
+/*Le damos estilo a la cabecera, como está dentro un div  indicamos que tendrá 20% de flex con padding, color de fonfo, etc*/
+.cabecera {
+    flex: 20%;
+    padding: 60px;
+    background: #f6be15;
+    padding-left: 50px;
+    padding-left: 50px;
+}
+
+/*Le damos estilo a la cabecera, como está dentro un div  indicamos que tendrá 80% de flex con padding, color de fonfo, etc*/
+/*De esta manera tenemos dos div en la cabecera*/
+.cabecera2 {
+    flex: 80%;
+    padding: 60px;
+    background: url("../img/fondocabecera2.png");
+    background-size: auto;
+    overflow: hidden;
+}
+
+
+
+/*A los h1 de la cabecera le damos estilo, cambiamos la fuente, la centramos, le damos color y modificamos el tamaño de la fuente*/
+.cabecera h1{
+    font-family: Arial;
+    text-align: center;
+    color: black;
+    font-size: 40px;
+    margin-bottom: 0px;
+}
+
+/*A los p que estén despues de los h1 le damos el siguiente estilo*/
+.cabecera h1 + p{
+    text-transform: capitalize;
+}
+
+
+/*A los parrafos de la cabecera los alineamos al centro, cambiamos el color y modificamos margenes*/
+.cabecera p{
+    text-align: center;
+    color: white;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 12px;
+}
+
+/*Establecemos el estilo de la barra de navegación de la página, con elementos flexibles e indicando un flex 100%, es decir que ocupará todo el ancho*/
+.navbar {
+    display: flex;
+    background-color: #333;
+    box-shadow: 0px 5px 7px #333;
+    border-top: 3px solid grey;
+    z-index: 2;
+    flex: 100%;
+}
+/* Estilos de los enlaces de la barra de navegación */
+.navbar a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+    border-bottom: 5px solid #333;
+}
+
+/* A los enlaces de la barra de navegación le cemabiamos el color y añadimos una anumación con hover */
+.navbar a:hover {
+    color: black;
+    animation-name: botones; /*La animación que se ejecutará*/
+    animation-duration: 0.4s; /*La duración de la animación*/
+    animation-fill-mode: forwards; /*La animación Conservará los estilos desde el principio*/
+}
+/*Se ejecuta la animación, basicamente lo que hace es cambiar el estilo del borde y el color de fondo */
+@keyframes botones {
+    from{border-bottom: 0px solid #f6be15; background-color: #333;}
+    to{border-bottom: 5px solid #f6be15;    background-color: #ddd;}
+}
+
+/*Damos estilo y un ancho de flex 20% al div que va en la parte izquierda de la página*/
+.izquierda{
+    flex: 10%;
+    flex-direction: column;
+    padding: 10px;
+    background-color: #cccccc;
+    height: auto;
+}
+/*Damos estilo y un ancho de flex 60% al div que va en la parte central de la página*/
+.centro{
+    flex: 90%;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #e0dfdf;
+}
+/*Los h2 que estén dentro de div, tendrán el siguiente estilo, un borde inferior y padding inferior*/
+/*.centro h2{*/
+    /*border-bottom: 2px solid #f6be15;*/
+    /*padding-bottom: 5px;*/
+/*}*/
+/*Damos estilo y un ancho de flex 20% al div que va en la parte derecha de la página*/
+.derecha{
+    flex: 20%;
+    padding: 20px;
+    background-color:  #f1f1f1;
+}
+
+/*Las lista de la parte derecha no tendrán ningun estilo*/
+.derecha ul{
+    list-style: none;
+}
+
+/*Esta clase (creada para un formulario) ocupará todo el ancho (como está dentro de un div con flex ocupará todo su ancho), le damos un color y padding*/
+.form {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+}
+
+.btnss {
+
+    background-color: #f6be15;
+    border: 2px solid #f6be15;
+
+    padding: 5px 10px 5px 10px;
+    border-radius: 2px;
+    box-shadow: 1px 1px 1px #333333;
+    text-decoration: none;
+    color: #333;
+}
+
+/*Se crea la siguiente clase para darle estilos a los a (así parecerán botones)*/
+/*Le cambiamos el color, añadimos borders, modificamos el borde, añadimos sombras, etc*/
+.btns {
+    text-align: center;
+    display: flex;
+    flex: 90%;
+    background-color: #f6be15;
+    border: 2px solid #f6be15;
+    margin-top: 5px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 2px;
+    box-shadow: 1px 1px 1px #333333;
+    text-decoration: none;
+    color: #333;
+}
+
+.btns:hover{
+    background-color: #dda808;
+    border-color: #dda808;
+    animation-name: botones2; /*La animación que se ejecutará*/
+    animation-duration: 0.3s; /*La duración de la animación*/
+    animation-fill-mode: forwards; /*La animación Conservará los estilos desde el principio*/
+}
+
+@keyframes botones2 {
+    from{background-color: #f6be15; border-color: #f6be15;}
+    to{background-color: #dda808; border-color: #dda808;}
+
+}
+
+/*A los parrafos de esta clase le modificamos los margenes para ajustarlos un poco*/
+.form p{
+    margin-top: 1px;
+    margin-bottom: 5px;
+}
+/*En esta clase le cambiamos el color, ocupara todo el ancho (como está dentro de un div con flex ocupará todo su ancho)*/
+.cursos{
+    background-color: #aaa;
+    width: 100%;
+    padding: 5px;
+}
+
+/*A los elementos li pares que estén dentro de esta clase, le cambiamos el color a la fuente, su tamaño etc*/
+.cursos li:nth-child(even){
+    color: white;
+    font-size: 15px;
+    margin-bottom: 20px;
+
+}
+/*A los elementos li impares que estén dentro de esta clase, cambiamos el texto a negrita*/
+.cursos li:nth-child(odd){
+    font-weight: bold;
+}
+/*A los elementos li impares que estén dentro de esta clase, con hover le vamos a cmabiar el color de la fuente*/
+.cursos li:nth-child(odd):hover{
+    color: #f6be15;
+
+}
+/*Las ul dentro de esta clase no tendrán estilo*/
+.cursos ul{
+    list-style: none;
+    list-style-position: outside;
+}
+/* Se crea la siguiente clase para darle estilo al footer de la página*/
+/*Le damos una fuente diferente a lo demás. se alinea al centro, se le cambia el color y se le añade un bordre superior*/
+.titFooter{
+    font-family: Arial;
+    padding: 0.1px;
+    text-align: center;
+    background: #333;
+    color: white;
+    border-top: 3px solid grey;
+}
+/* Se crea la siguiente clase para darle estilo a un segundo footer de la página*/
+.footer {
+    padding: 1px;
+    text-align: center;
+    background: #f6be15;
+    color: white;
+}
+
+/*Se crea la siguiente clase para dar estilos a los enlaces que queramos, se le quita la decoración y se cambia el color*/
+.enlaces{
+    color:   #0080ff;
+    text-decoration: none;
+}
+/*Con esta clase le vamos a dar estilo a titulos (valen como cabecera de posts). Le cambiamos el color de fondo, de la fuente, añadimos una sombra, borde superior, etc*/
+.titles{
+    background-color: #333;
+    border-top: 3px solid #f6be15;
+    color: white;
+    padding: 0.1px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 0px 0px 5px 5px;
+    box-shadow: 0px 5px 7px #333;
+}
+
+/*Para la parte central creamos la siguiente clase (el contenido de los posts por ejemplo), donde tendra un color de fondo y margenes inderiores*/
+.contentTitles{
+    background-color: #cccccc;
+    margin-bottom: 40px;
+
+}
+
+/*Esta clase simplemente añade paddin a su contenido*/
+.paddin{
+    padding: 20px;
+}
+
+/*Esta clase añade un borde superior y paddin (para ponerlo como autor de los posts)*/
+.autor{
+    border-top: 1px solid #f6be15;
+    padding: 10px;
+}
+
+/*las etiquetas pre le hemos cambiado el color de fondo, de fuente y le añadimos padding*/
+pre{
+    color: #f6be15;
+    background-color: #333;
+    padding: 20px;
+}
+
+/*Estas tres clase la hemos creado para dar estilo a etiquetas span, simplemente cambia el color de la fuente*/
+
+.llave{
+    color:   #0080ff;
+}
+
+.valores{
+    color:#ff3385;
+}
+
+.valor{
+    color: #187737;
+}
+
+/*Se  crea la siguiente clase para justificar el texto al que lo añadamos*/
+.justificado{
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.errorPage{
+    position: absolute;
+    top: 40%;
+    left: 40%;
+
+}
+
+.errorPage h1{
+    font-size: 150px;
+}
+.errorPage h1{
+    font-size: 80px;
+}
+
+.titles a{
+    color: white;
+    text-decoration: none;
+}
+
+.titles a:hover{
+    color:  #f6be15;
+}
+
+.error-list{
+    background-color: #f44842;
+    color: white;
+    padding: 5px;
+    width: 300px;
+    border-radius: 5px;
+}
+
+.paddin th{
+    background-color: #333;
+    padding: 5px;
+    color: white;
+}
+.paddin td{
+    background-color: #f6be15;
+    padding: 5px;
+}
+
+.paddin table{
+    border-top: 2px solid #f6be15;
+    width: 60%;
+
+}
+
+.paddin a{
+    text-decoration: none;
+    color: #333;
+}
+
+.paddin a:hover{
+    border-bottom: 2px solid #333;
+}
+
+
+
+.btnsdelete {
+
+    background-color: #f6be15;
+    border: 2px solid #c43636;
+    padding: 5px 10px 5px 10px;
+    border-radius: 2px;
+    text-decoration: none;
+    color: #333;
+}
+
+.btnsdelete:hover{
+    font-weight: bold;
+}
+
+.navbar p{
+    padding: 10px;
+    color: #333;
+    border-bottom: 5px solid #f6be15;
+    background-color: #ddd;
+
+
+}
