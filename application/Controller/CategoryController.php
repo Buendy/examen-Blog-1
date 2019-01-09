@@ -10,7 +10,7 @@ namespace Mini\Controller;
 use Mini\Libs\Dbpdo;
 use Mini\Core\Controller;
 use Mini\Core\Validacion;
-use Mini\Model\Category;
+use Mini\Model\Curso;
 use Exception;
 
 
@@ -77,7 +77,7 @@ class CategoryController extends Controller
             header("Location:" . URL);
         }else{
             try{
-                $insert = new Category();
+                $insert = new Curso();
                 $insert->insert(['nombre' => $_POST['nombre'], 'descripcion' => $_POST['descripcion']]);
                 echo $this->view->render("/partials/category-success");
 
@@ -110,7 +110,7 @@ class CategoryController extends Controller
 
                 }else{
 
-                    $category = new Category();
+                    $category = new Curso();
                     $validaciones = new Validacion();
 
                     if(!isset($_POST['nombre'])){

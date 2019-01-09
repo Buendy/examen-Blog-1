@@ -6,7 +6,7 @@ use Mini\Core\Controller;
 use Mini\Libs\Dbpdo;
 Use Mini\Model\Contact;
 use Mini\Core\Validacion;
-use Mini\Model\Category;
+use Mini\Model\Curso;
 
 
 class PostController extends Controller
